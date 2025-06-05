@@ -2,6 +2,7 @@
 
 
 class Animal:
+
     def __init__(self, name:str, types:str, age:str):
 
         self.name = name
@@ -21,10 +22,12 @@ animal = Animal('Мурка', 'Кошка', '7')
 print(f'Имя животного: {animal.name}, Вид животного: {animal.types}, Возраст животного: {animal.age}')
 
 animal.animal_sound('sound', '15%')
-print('-' * 100)
+
+print('\033[35m-\033[0m' * 100)
 # Задача №2
 
 class book:
+
     def __init__(self, name_book:str, author_book:str, number_pages:int):
 
         self.name_book = name_book
@@ -54,16 +57,15 @@ class book:
 
             print(f'Книга \033[31mне открылась\033[0m, номер страницы = {self.input_number_pages} \033[31mвыходит за диапазон\033[0m страниц книги от 1 до {self.number_pages}')
 
+book_1 = book('Книга', 'Автор', 275)
 
-
-book_1 = book
-book_1.name_book = 'Книга'
-book_1.author_book = 'Автор'
-book_1.number_pages = 275
-
-book_1.displaying_book_screen(book)
+book_1.displaying_book_screen()
 input_number_pages = input('Введите номер страницы которую хотите открыть в данной книге >> ')
-book_1.open_number_pages(book, input_number_pages)
+book_1.open_number_pages(input_number_pages)
+
+
+
+
 
 
 
