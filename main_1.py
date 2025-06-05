@@ -63,7 +63,58 @@ book_1.displaying_book_screen()
 input_number_pages = input('Введите номер страницы которую хотите открыть в данной книге >> ')
 book_1.open_number_pages(input_number_pages)
 
+print('\033[35m-\033[0m' * 100)
+# Задача №3
 
+class passenger_plane:
+
+    def __init__(self, manufacturer_plane:str, model_plane:str, quantity_passengers:str):
+
+        self.manufacturer_plane = manufacturer_plane
+        self.model_plane = model_plane
+        self.quantity_passengers = quantity_passengers
+
+    def displaying_plane(self):
+
+        print(f'Конструкторское бюро: {self.manufacturer_plane}\nМодель самолета: {self.model_plane}\nПассажировместимость: {self.quantity_passengers}')
+
+    def condition_plane(self, height):
+
+        self.height = height
+        messege_user = 'Самолет приземлился'
+
+        if height > 0:
+
+            messege_user = 'Самолет взлетел'
+
+        print(messege_user)
+
+    def speed_plane(self, speed = 150):
+
+        self.speed = speed
+
+        print(f'Скорость самолета = {self.speed}')
+
+plane = passenger_plane('Туполев', 'Ту-144', '150' )
+
+plane.displaying_plane()
+
+height = input('Введите высоту самолета 0 или больше 0 >> ')
+
+while not height.isdigit():
+    print('\033[31mВы ввели не число, или оно меньше нуля\033[0m, повторите ввод >> ')
+    height = input('Введите высоту самолета 0 или больше 0 >> ')
+
+height = int(height)
+plane.condition_plane(height)
+
+speed = input('Введите скорость самолета >> ')
+while not speed.isdigit():
+    print('\033[31mВы ввели не число, или оно меньше нуля\033[0m, повторите ввод >> ')
+    speed = input('Введите скорость самолета >> ')
+
+speed = int(speed)
+plane.speed_plane(speed)
 
 
 
